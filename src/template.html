@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <title>{{name}} CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>{{name}}</h1>
+    <p>{{title}}</p>
+  </header>
+  
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Info</h2>
+      <p>{{contact.location}}</p>
+      <p>{{contact.phone}}<br>{{contact.email}}</p>
+      
+      <h2>Links</h2>
+      <div id="links">
+        {{#links}}
+        <p><a href="{{url}}">{{label}}</a></p>
+        {{/links}}
+      </div>
+      
+      <h2>Skills</h2>
+      <div id="skills">
+        {{#skills}}
+        <p>{{.}}</p>
+        {{/skills}}
+      </div>
+      
+      <h2>Education</h2>
+      <div id="education">
+        {{#education}}
+        <p><strong>{{institution}}</strong><br>{{degree}}<br>{{period}}</p>
+        {{/education}}
+      </div>
+    </aside>
+    
+    <main class="main">
+      <div id="main-content">
+        {{{content}}}
+      </div>
+    </main>
+  </div>
+</body>
+</html>
