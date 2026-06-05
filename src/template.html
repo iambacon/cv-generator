@@ -6,44 +6,76 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>{{name}}</h1>
-    <p>{{title}}</p>
-  </header>
-  
   <div class="container">
+    <header>
+      <h1>{{name}}</h1>
+      <p>{{title}}</p>
+    </header>
+    
     <aside class="sidebar">
-      <h2>Info</h2>
-      <p>{{contact.location}}</p>
-      <p>{{contact.phone}}<br>{{contact.email}}</p>
+      <section>
+        <h2>Info</h2>
+        <hr>
+        <p>{{contact.location}}</p>
+        <p>{{contact.phone}}<br>{{contact.email}}</p>
+      </section>
       
-      <h2>Links</h2>
-      <div id="links">
-        {{#links}}
-        <p><a href="{{url}}">{{label}}</a></p>
-        {{/links}}
-      </div>
+      <section>
+        <h2>Links</h2>
+        <hr>
+        <div id="links">
+          {{#links}}
+          <p><a href="{{url}}">{{label}}</a></p>
+          {{/links}}
+        </div>
+      </section>
       
-      <h2>Skills</h2>
-      <div id="skills">
-        {{#skills}}
-        <p>{{.}}</p>
-        {{/skills}}
-      </div>
+      <section>
+        <h2>Skills</h2>
+        <hr>
+        <div id="skills">
+          {{#skills}}
+          <p>{{.}}</p>
+          {{/skills}}
+        </div>
+      </section>
       
-      <h2>Education</h2>
-      <div id="education">
-        {{#education}}
-        <p><strong>{{institution}}</strong><br>{{degree}}<br>{{period}}</p>
-        {{/education}}
-      </div>
+      <section>
+        <h2>Education</h2>
+        <hr>
+        <div id="education">
+          {{#education}}
+          <p><strong>{{institution}}</strong><br>{{degree}}<br>{{period}}</p>
+          {{/education}}
+        </div>
+      </section>
     </aside>
     
     <main class="main">
-      <div id="main-content">
+      <section id="summary">
         {{{content}}}
-      </div>
-    </main>
+      </section>
+      
+      <section id="experience">
+        <h2>Professional Experience</h2>
+        <hr>
+        {{#experience}}
+        <div class="job">
+          <h3>{{title}}, {{company}}</h3>
+          <p class="job-meta">{{location}} | {{period}}</p>
+          {{#if tech}}
+          <p class="tech-stack"><strong>Tech:</strong> {{tech}}</p>
+          {{/if}}
+          <p class="summary">{{summary}}</p>
+          <ul>
+            {{#bullets}}
+            <li>{{.}}</li>
+            {{/bullets}}
+          </ul>
+        </div>
+        {{/experience}}
+      </main>
+    </div>
   </div>
 </body>
 </html>
