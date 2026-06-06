@@ -2,6 +2,10 @@
 
 Generate a styled PDF CV from a Markdown file using Handlebars and Playwright.
 
+## Example
+
+![Example resume generated from Markdown](docs/example-resume.png)
+
 ## Requirements
 
 - Node.js 20 or newer
