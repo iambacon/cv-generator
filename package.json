@@ -4,7 +4,7 @@
   "description": "",
   "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +16,6 @@
   "dependencies": {
     "gray-matter": "^4.0.3",
     "handlebars": "^4.7.9",
-    "marked": "^18.0.5",
-    "pdf-parse": "^2.4.5",
-    "pixelmatch": "^7.2.0",
-    "pngjs": "^7.0.0"
+    "marked": "^18.0.5"
   }
 }

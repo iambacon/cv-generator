@@ -2,80 +2,91 @@
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
+  <base href="{{baseHref}}">
   <title>{{name}} CV</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
+  <article class="page">
+    <aside class="sidebar">
+      <section class="sidebar-section sidebar-info">
+        <h2>Info</h2>
+        <div class="rule"></div>
+        {{#if contact.phone}}
+        <h3>Phone</h3>
+        <p>{{contact.phone}}</p>
+        {{/if}}
+        {{#if contact.email}}
+        <h3>Email</h3>
+        <p>{{contact.email}}</p>
+        {{/if}}
+        {{#if contact.location}}
+        <h3>Location</h3>
+        <p>{{contact.location}}</p>
+        {{/if}}
+      </section>
+
+      <section class="sidebar-section">
+        <h2>Links</h2>
+        <div class="rule"></div>
+        {{#links}}
+        <p><a href="{{url}}">{{label}}</a></p>
+        {{/links}}
+      </section>
+
+      <section class="sidebar-section">
+        <h2>Skills</h2>
+        <div class="rule"></div>
+        {{#skills}}
+        <p>{{.}}</p>
+        {{/skills}}
+      </section>
+
+      <section class="sidebar-section">
+        <h2>Education</h2>
+        <div class="rule"></div>
+        {{#education}}
+        <p><strong>{{institution}}</strong><br>{{degree}}{{#if period}}<br>{{period}}{{/if}}</p>
+        {{/education}}
+      </section>
+    </aside>
+
+    <header class="nameplate">
       <h1>{{name}}</h1>
       <p>{{title}}</p>
     </header>
-    
-    <aside class="sidebar">
-      <section>
-        <h2>Info</h2>
-        <hr>
-        <p>{{contact.location}}</p>
-        <p>{{contact.phone}}<br>{{contact.email}}</p>
-      </section>
-      
-      <section>
-        <h2>Links</h2>
-        <hr>
-        <div id="links">
-          {{#links}}
-          <p><a href="{{url}}">{{label}}</a></p>
-          {{/links}}
-        </div>
-      </section>
-      
-      <section>
-        <h2>Skills</h2>
-        <hr>
-        <div id="skills">
-          {{#skills}}
-          <p>{{.}}</p>
-          {{/skills}}
-        </div>
-      </section>
-      
-      <section>
-        <h2>Education</h2>
-        <hr>
-        <div id="education">
-          {{#education}}
-          <p><strong>{{institution}}</strong><br>{{degree}}<br>{{period}}</p>
-          {{/education}}
-        </div>
-      </section>
-    </aside>
-    
-    <main class="main">
-      <section id="summary">
+
+    <main class="content">
+      <section class="profile">
         {{{content}}}
       </section>
-      
-      <section id="experience">
-        <h2>Professional Experience</h2>
-        <hr>
+
+      <section class="experience">
+        <h2>{{sectionTitle}}</h2>
+        <div class="rule"></div>
         {{#experience}}
-        <div class="job">
-          <h3>{{title}}, {{company}}</h3>
-          <p class="job-meta">{{location}} | {{period}}</p>
+        <section class="job">
+          <header class="job-header">
+            <h3>{{title}}, {{company}}</h3>
+            <p>{{location}}</p>
+          </header>
+          <p class="period">{{period}}</p>
           {{#if tech}}
-          <p class="tech-stack"><strong>Tech:</strong> {{tech}}</p>
+          <p class="tech">{{tech}}</p>
           {{/if}}
+          {{#if summary}}
           <p class="summary">{{summary}}</p>
+          {{/if}}
+          {{#if bullets.length}}
           <ul>
             {{#bullets}}
             <li>{{.}}</li>
             {{/bullets}}
           </ul>
-        </div>
+          {{/if}}
+        </section>
         {{/experience}}
-      </main>
-    </div>
-  </div>
+      </section>
+    </main>
+  </article>
 </body>
 </html>

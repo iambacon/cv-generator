@@ -1,6 +1,7 @@
 node_modules/
 dist/
 data/
+Resume.md
 .DS_Store
 agents.md
 compare.js
