@@ -54,7 +54,10 @@ The file uses YAML frontmatter for structured CV data and Markdown for the profi
 - `education`
 - `experience`
 
-Each experience entry supports a role title, company, location, period, technology summary, description, and bullet points.
+Each experience entry supports a role title, company, location, period, technology summary, description, and bullet points. Set the optional `pageBreakBefore: true` field to start a role on a new page. Roles are otherwise kept together where space permits.
+
+For detailed authoring rules intended for both people and AI coding sessions,
+see `AGENTS.md`.
 
 ## Customising The Theme
 
