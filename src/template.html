@@ -64,7 +64,7 @@
         <h2>{{sectionTitle}}</h2>
         <div class="rule"></div>
         {{#experience}}
-        <section class="job">
+        <section class="job{{#if pageBreakBefore}} job--new-page{{/if}}">
           <header class="job-header">
             <h3>{{title}}, {{company}}</h3>
             <p>{{location}}</p>

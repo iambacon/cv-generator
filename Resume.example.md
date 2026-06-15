@@ -35,6 +35,7 @@ experience:
     title: Software Engineer
     location: Manchester
     period: June 2018 - December 2021
+    # pageBreakBefore: true
     tech: JavaScript, React, C#, SQL
     summary: Built web applications and internal tools for clients in regulated industries.
     bullets:

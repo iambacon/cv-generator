@@ -52,6 +52,7 @@ body {
   position: relative;
   width: var(--page-width);
   min-height: var(--page-height);
+  padding: 181.4px 35.98px 32px 200.6px;
   overflow: visible;
   background:
     linear-gradient(to right, var(--sidebar) 0 178px, var(--paper) 178px 100%);
@@ -102,9 +103,6 @@ body {
 }
 
 .content {
-  position: absolute;
-  left: 200.6px;
-  top: 181.4px;
   width: 358.7px;
 }
 
@@ -218,6 +216,13 @@ body {
 
 .job {
   margin: 0 0 21px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.job--new-page {
+  break-before: page;
+  page-break-before: always;
 }
 
 .job-header {
@@ -288,6 +293,18 @@ body {
 @media print {
   @page {
     size: 595.28px 822.05px;
-    margin: 0;
+    margin: 32px 0 0;
+  }
+
+  @page :first {
+    margin-top: 0;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 178px;
+    background: var(--sidebar);
   }
 }
