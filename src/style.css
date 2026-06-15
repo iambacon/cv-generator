@@ -294,6 +294,12 @@ body {
   @page {
     size: 595.28px 822.05px;
     margin: 32px 0 0;
+
+    @top-left {
+      content: "";
+      width: 178px;
+      background: var(--sidebar);
+    }
   }
 
   @page :first {
